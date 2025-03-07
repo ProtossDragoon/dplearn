@@ -1,4 +1,4 @@
-PROJECT = myproject
+PROJECT = dplearn
 
 all: install-dev test
 
