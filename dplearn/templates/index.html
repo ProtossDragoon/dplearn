@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}홈 - 디자인 패턴 퀴즈 트레이너{% endblock %}
+
+{% block content %}
+<div class="columns is-centered">
+    <div class="column is-8">
+        <div class="box has-text-centered">
+            <h1 class="title is-2">디자인 패턴 퀴즈 트레이너</h1>
+            <p class="subtitle is-5 mb-6">디자인 패턴을 빠르게 연습하고 실력을 향상시키세요</p>
+            
+            <a href="/quiz" id="start-quiz" class="button is-primary is-large is-rounded mt-5 mb-5">
+                <span class="icon">
+                    <i class="fas fa-play"></i>
+                </span>
+                <span>랜덤 문제 시작</span>
+            </a>
+        </div>
+
+        <div class="box mt-5">
+            <h2 class="title is-4 has-text-centered">최근 30일 점수</h2>
+            <div class="chart-container" style="position: relative; height:300px;">
+                <canvas id="scoreChart"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="/static/js/home.js"></script>
+{% endblock %}

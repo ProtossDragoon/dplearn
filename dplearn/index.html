@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>디자인 패턴 퀴즈 트레이너</title>
+    <!-- Bulma CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <!-- Font Awesome 아이콘 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- 사용자 정의 스타일 (필요한 경우) -->
+    <style>
+        .hero.is-primary {
+            background: linear-gradient(to right, #4a00e0, #8e2de2);
+        }
+        .card {
+            box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.02);
+            transition: transform 0.3s ease;
+        }
+        .chart-container {
+            height: 300px;
+            width: 100%;
+        }
+        .start-button {
+            transition: transform 0.3s ease;
+        }
+        .start-button:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <!-- 히어로 섹션 (헤더) -->
+    <section class="hero is-primary is-bold">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <h1 class="title is-2">
+                    <i class="fas fa-code mr-2"></i> 디자인 패턴 퀴즈 트레이너
+                </h1>
+                <p class="subtitle is-5">
+                    디자인 패턴을 배우고 실력을 테스트하세요
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <!-- 시작 버튼 -->
+            <div class="has-text-centered mb-6">
+                <button id="start-quiz" class="button is-primary is-large start-button">
+                    <span class="icon">
+                        <i class="fas fa-play"></i>
+                    </span>
+                    <span>랜덤 문제 시작</span>
+                </button>
+            </div>
+
+            <!-- 최근 점수 차트 -->
+            <div class="card">
+                <header class="card-header">
+                    <p class="card-header-title is-centered">
+                        <span class="icon mr-2">
+                            <i class="fas fa-chart-bar"></i>
+                        </span>
+                        최근 30일 점수
+                    </p>
+                </header>
+                <div class="card-content">
+                    <div id="score-chart" class="chart-container">
+                        <!-- 차트가 여기에 표시됩니다 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 푸터 -->
+    <footer class="footer has-background-light">
+        <div class="content has-text-centered">
+            <p>
+                <strong>디자인 패턴 퀴즈 트레이너</strong> | 효율적인 학습을 위한 도구
+            </p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="static/js/home.js"></script>
+</body>
+</html>

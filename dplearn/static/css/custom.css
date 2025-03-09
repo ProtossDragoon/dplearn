@@ -1,0 +1,77 @@
+/* 공통 스타일 */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+.footer {
+    margin-top: auto;
+    padding: 1.5rem;
+}
+
+/* 홈페이지 스타일 */
+#start-quiz {
+    min-width: 200px;
+}
+
+/* 퀴즈 페이지 스타일 */
+pre {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.choice-button {
+    width: 100%;
+    margin-bottom: 1rem;
+    white-space: normal;
+    height: auto;
+    padding: 1.25rem;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.choice-button .pattern-name {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.choice-button .pattern-description {
+    font-size: 0.9rem;
+    color: #4a4a4a;
+}
+
+/* 타이머 경고 스타일 */
+.timer-warning {
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+/* 결과 페이지 스타일 */
+.correct {
+    color: #48c774;
+}
+
+.incorrect {
+    color: #f14668;
+}
+
+.table tr.is-correct {
+    background-color: rgba(72, 199, 116, 0.1);
+}
+
+.table tr.is-incorrect {
+    background-color: rgba(241, 70, 104, 0.1);
+}

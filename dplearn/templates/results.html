@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block title %}결과 - 디자인 패턴 퀴즈 트레이너{% endblock %}
+
+{% block content %}
+<div class="columns is-centered">
+    <div class="column is-10">
+        <div class="box">
+            <h1 class="title is-3 has-text-centered">퀴즈 결과</h1>
+            
+            <!-- 결과 요약 -->
+            <div class="level box has-background-light mb-5">
+                <div class="level-item has-text-centered">
+                    <div>
+                        <p class="heading">최종 점수</p>
+                        <p class="title" id="total-score">-</p>
+                    </div>
+                </div>
+                <div class="level-item has-text-centered">
+                    <div>
+                        <p class="heading">푼 문제 수</p>
+                        <p class="title" id="problems-solved">-</p>
+                    </div>
+                </div>
+                <div class="level-item has-text-centered">
+                    <div>
+                        <p class="heading">맞춘 문제 수</p>
+                        <p class="title" id="correct-answers">-</p>
+                    </div>
+                </div>
+                <div class="level-item has-text-centered">
+                    <div>
+                        <p class="heading">정확도</p>
+                        <p class="title" id="accuracy">-</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 문제별 결과 -->
+            <h2 class="title is-4 mb-3">문제별 결과</h2>
+            <div class="table-container">
+                <table class="table is-fullwidth">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>디자인 패턴</th>
+                            <th>정답 여부</th>
+                            <th>소요 시간</th>
+                        </tr>
+                    </thead>
+                    <tbody id="answers-table">
+                        <!-- 동적으로 생성됨 -->
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- 홈으로 버튼 -->
+            <div class="has-text-centered mt-5">
+                <a href="/" class="button is-primary is-large">
+                    <span class="icon">
+                        <i class="fas fa-home"></i>
+                    </span>
+                    <span>홈으로</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    const sessionId = {{ session_id }};
+</script>
+<script src="/static/js/results.js"></script>
+{% endblock %}
